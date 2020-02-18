@@ -10,12 +10,13 @@ namespace PCMLibrary
     {
         public int EmployeeId { get; private set; }
         public string NameSurname { get; private set; }
-        private Right EmployeeRight;
-public Employee(int employeeId, string nameSurname, Right employeeRight)
+        private List<int> PassRights;
+        
+        public Employee(int employeeId, string nameSurname, List<int> passrights)
         {
             EmployeeId = employeeId;
             NameSurname = nameSurname;
-            EmployeeRight = employeeRight;
+            PassRights = passrights;
         }
     }
 }

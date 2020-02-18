@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1.csproj", "{4ECA04AB-CBB6-42DC-BD78-FB9230EE9A84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassControlManagement", "PassControlManagement.csproj", "{4ECA04AB-CBB6-42DC-BD78-FB9230EE9A84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCMLibrary", "..\PCMLibrary\PCMLibrary.csproj", "{57D9D592-CDE0-465A-BC5C-2921D6E6974C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCMTest", "..\PCMTest\PCMTest.csproj", "{CB4AB93C-F180-4C06-97CE-3E69CFEEB731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4ECA04AB-CBB6-42DC-BD78-FB9230EE9A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ECA04AB-CBB6-42DC-BD78-FB9230EE9A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ECA04AB-CBB6-42DC-BD78-FB9230EE9A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57D9D592-CDE0-465A-BC5C-2921D6E6974C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57D9D592-CDE0-465A-BC5C-2921D6E6974C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57D9D592-CDE0-465A-BC5C-2921D6E6974C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57D9D592-CDE0-465A-BC5C-2921D6E6974C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB4AB93C-F180-4C06-97CE-3E69CFEEB731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB4AB93C-F180-4C06-97CE-3E69CFEEB731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB4AB93C-F180-4C06-97CE-3E69CFEEB731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB4AB93C-F180-4C06-97CE-3E69CFEEB731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
