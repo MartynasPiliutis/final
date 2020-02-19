@@ -31,5 +31,25 @@ namespace PCMTest
             int EventListCount = eventRepository.GetAllEventListByEmployeeIdThatPassed(2020).Count;
             Assert.AreEqual(EventListCount, 105);
         }
+
+        [TestMethod]
+        public void PatikrinameArGrazinaVisaSarasaPagalData()
+        {
+            EventRepository eventRepository = new EventRepository();
+            DateTime startDate = new DateTime(2020, 1, 3,0,0,0);
+            DateTime endDate = new DateTime(2020,2,1,23,59,59);
+            int EventListCount = eventRepository.GetAllEventListByDate(startDate,endDate).Count;
+            Assert.AreEqual(EventListCount, 1995);
+        }
+
+        [TestMethod]
+        public void PatikrinameArGrazinaVisaSarasaPagalDataSuTrueIvykiais()
+        {
+            EventRepository eventRepository = new EventRepository();
+            DateTime startDate = new DateTime(2020, 1, 3, 0, 0, 0);
+            DateTime endDate = new DateTime(2020, 2, 1, 23, 59, 59);
+            int EventListCount = eventRepository.GetAllTrueEventListByDate(startDate, endDate).Count;
+            Assert.AreEqual(EventListCount, 803);
+        }
     }
 }

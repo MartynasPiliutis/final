@@ -4044,5 +4044,31 @@ namespace PCMLibrary
             }
             return EventListByIdPass;
         }
+
+        public List<Event> GetAllEventListByDate(DateTime StartDate, DateTime EndDate)
+        {
+            List<Event> EventListByDate = new List<Event>();
+            foreach (var item in EventList)
+            {
+                if (item.PassTime >= StartDate && item.PassTime <= EndDate)
+                {
+                    EventListByDate.Add(new Event(item.EventId, item.EmployeeId, item.GateId, item.PassTime, item.Pass));
+                }
+            }
+            return EventListByDate;
+        }
+
+        public List<Event> GetAllTrueEventListByDate(DateTime StartDate, DateTime EndDate)
+        {
+            List<Event> EventListByDateTrue = new List<Event>();
+            foreach (var item in EventList)
+            {
+                if (item.PassTime >= StartDate && item.PassTime <= EndDate && item.Pass == true)
+                {
+                    EventListByDateTrue.Add(new Event(item.EventId, item.EmployeeId, item.GateId, item.PassTime, item.Pass));
+                }
+            }
+            return EventListByDateTrue;
+        }
     }
 }
