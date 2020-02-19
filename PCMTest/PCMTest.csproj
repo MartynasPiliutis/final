@@ -52,6 +52,7 @@
     <Compile Include="EmployeeRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GateRepositoryTest.cs" />
+    <Compile Include="EventRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
