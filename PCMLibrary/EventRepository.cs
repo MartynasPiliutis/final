@@ -4078,7 +4078,7 @@ namespace PCMLibrary
             {
                 if (item.PassTime.Date == passTime.Date)
                 {
-                    OneDayReport.Add(new Event(item.EventId, item.EmployeeId, item.GateId, item.PassTime.Date, item.Pass));
+                    OneDayReport.Add(new Event(item.EventId, item.EmployeeId, item.GateId, item.PassTime, item.Pass));
                 }
             }
 
