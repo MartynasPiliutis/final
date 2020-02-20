@@ -51,5 +51,14 @@ namespace PCMTest
             int EventListCount = eventRepository.GetAllTrueEventListByDate(startDate, endDate).Count;
             Assert.AreEqual(EventListCount, 803);
         }
+
+        [TestMethod]
+        public void PatikrinameArGrazinaVisusIvykiusPasirinktaDiena()
+        {
+            EventRepository eventRepository = new EventRepository();
+            DateTime selectDay = new DateTime(2020, 1, 20);
+            int EventListCount = eventRepository.GetAllOneDayEvents(selectDay).Count;
+            Assert.AreEqual(EventListCount, 61);
+        }
     }
 }

@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReportOnePass.cs" />
+    <Compile Include="ReportGenerator.cs" />
+    <Compile Include="ReportPeriod.cs" />
+    <Compile Include="ReportTotalHours.cs" />
+    <Compile Include="ReportEvent.cs" />
+    <Compile Include="EventController.cs" />
     <Compile Include="EventRepository.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="GateRepository.cs" />

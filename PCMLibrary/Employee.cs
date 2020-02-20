@@ -18,5 +18,17 @@ namespace PCMLibrary
             NameSurname = nameSurname;
             PassRights = passrights;
         }
+
+        public bool CheckEmployeeHasRight(int gateId)
+        {
+            foreach (var item in PassRights)
+            {
+                if (item == gateId)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

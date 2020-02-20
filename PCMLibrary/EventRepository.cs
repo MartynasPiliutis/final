@@ -4070,5 +4070,19 @@ namespace PCMLibrary
             }
             return EventListByDateTrue;
         }
+        public List<Event> GetAllOneDayEvents(DateTime passTime)
+        {
+            List<Event> OneDayReport = new List<Event>();
+
+            foreach (var item in EventList)
+            {
+                if (item.PassTime.Date == passTime.Date)
+                {
+                    OneDayReport.Add(new Event(item.EventId, item.EmployeeId, item.GateId, item.PassTime.Date, item.Pass));
+                }
+            }
+
+            return OneDayReport;
+        }
     }
 }
