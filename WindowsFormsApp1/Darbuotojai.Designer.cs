@@ -65,6 +65,7 @@
             this.darbuotojai_button_add.TabIndex = 2;
             this.darbuotojai_button_add.Text = "Pridėti naują";
             this.darbuotojai_button_add.UseVisualStyleBackColor = true;
+            this.darbuotojai_button_add.Click += new System.EventHandler(this.darbuotojai_button_add_Click);
             // 
             // darbuotojai_button_remove
             // 

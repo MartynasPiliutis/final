@@ -39,13 +39,22 @@ namespace PCMLibrary
             return EmployeeList;
         }
 
-        public void AddNewEmployee(int newEmloyeeId, string newEmployeeName, List<int> gateList)
+        public void AddNewEmployee(int newEmployeeId, string newEmployeeName, List<int> gateList)
         {
-            if (GetEmployeeById(newEmloyeeId) == null)
+            if (GetEmployeeById(newEmployeeId) == null)
             {
-                EmployeeList.Add(new Employee(newEmloyeeId, newEmployeeName, gateList));
+                EmployeeList.Add(new Employee(newEmployeeId, newEmployeeName, gateList));
             }
         }
+
+        public int NewEmployeeIdGenerator()
+        {
+            List<Employee> currentList = GetEmployeeList();
+            int idMax = currentList.Max(lastId => lastId.EmployeeId);
+            int idNew = idMax + 1;
+            return idNew;
+        }
+
 
         public void RemoveEmployee(int removeEmloyeeId)
         {

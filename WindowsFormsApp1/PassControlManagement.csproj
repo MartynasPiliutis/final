@@ -58,6 +58,12 @@
     <Compile Include="DarbuotojuPaieska.Designer.cs">
       <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
     </Compile>
+    <Compile Include="NaujasDarbuotojas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NaujasDarbuotojas.Designer.cs">
+      <DependentUpon>NaujasDarbuotojas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagrindinis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DarbuotojuPaieska.resx">
       <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NaujasDarbuotojas.resx">
+      <DependentUpon>NaujasDarbuotojas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagrindinis.resx">
       <DependentUpon>Pagrindinis.cs</DependentUpon>

@@ -42,5 +42,13 @@ namespace PCMSystem
             darbuotojuPaieska.ShowDialog();
             this.Close();
         }
+
+        private void darbuotojai_button_add_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NaujasDarbuotojas naujasDarbuotojas = new NaujasDarbuotojas();
+            naujasDarbuotojas.ShowDialog();
+            this.Close();
+        }
     }
 }

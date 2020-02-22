@@ -62,5 +62,14 @@ namespace PCMTest
             int employeeIdListCount = employeeRepository.GetAllEmployeeId().Length;
             Assert.AreEqual(employeeIdListCount, 20);
         }
+
+        [TestMethod]
+        public void TikrinameArSukuriaNaujaDidziausiaId()
+        {
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+            List<Employee> EmployeeList = new List<Employee>();
+            int newId = employeeRepository.NewEmployeeIdGenerator();
+            Assert.AreEqual(newId, 2021);
+        }
     }
 }

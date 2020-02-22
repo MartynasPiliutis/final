@@ -54,13 +54,6 @@ namespace PCMSystem
                 if (pass == true) { leidimas = "Galima"; } else { leidimas = "Negalima"; }
                 dfind_textbox_output.Items.Add($"{gate} (ID: {gateId}): {leidimas}");
             }
-
-            
-
-            
-            /*dfind_textbox_output.Items.Add($"Rytiniai: {darbuotojas.CheckEmployeeHasRight(32)}");
-            dfind_textbox_output.Items.Add($"Pietiniai: {darbuotojas.CheckEmployeeHasRight(33)}");
-            dfind_textbox_output.Items.Add($"Vakariniai: {darbuotojas.CheckEmployeeHasRight(34)}");*/
         }
 
         private void dfind_textbox_output_SelectedIndexChanged(object sender, EventArgs e)
