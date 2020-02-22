@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4ECA04AB-CBB6-42DC-BD78-FB9230EE9A84}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <RootNamespace>PCMSystem</RootNamespace>
+    <AssemblyName>PCMSystem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,14 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Darbuotojai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Darbuotojai.Designer.cs">
+      <DependentUpon>Darbuotojai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DarbuotojuPaieska.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DarbuotojuPaieska.Designer.cs">
+      <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagrindinis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagrindinis.Designer.cs">
+      <DependentUpon>Pagrindinis.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Darbuotojai.resx">
+      <DependentUpon>Darbuotojai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DarbuotojuPaieska.resx">
+      <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagrindinis.resx">
+      <DependentUpon>Pagrindinis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCMLibrary\PCMLibrary.csproj">
+      <Project>{57d9d592-cde0-465a-bc5c-2921d6e6974c}</Project>
+      <Name>PCMLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
