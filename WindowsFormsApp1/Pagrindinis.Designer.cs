@@ -122,6 +122,7 @@
             this.Controls.Add(this.main_button_darbuotojai);
             this.Controls.Add(this.main_label_pcms);
             this.Name = "Pagrindinis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagrindinis";
             this.ResumeLayout(false);
 

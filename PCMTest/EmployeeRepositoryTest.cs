@@ -54,5 +54,13 @@ namespace PCMTest
 
             Assert.AreEqual(employeeListCount, 19);
         }
+
+        [TestMethod]
+        public void TikrinameArGrazinaVisaDarbuotojuIdSarasa()
+        {
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+            int employeeIdListCount = employeeRepository.GetAllEmployeeId().Length;
+            Assert.AreEqual(employeeIdListCount, 20);
+        }
     }
 }

@@ -73,5 +73,16 @@ namespace PCMLibrary
             }
             return null;
         }
+        public object[] GetAllEmployeeId()
+        {
+            int arrayLenght = EmployeeList.Count;
+            object[] employeeIdList = new object[arrayLenght];
+            for (int i = 0; i < arrayLenght; i++)
+            {
+                employeeIdList[i] = EmployeeList[i].EmployeeId;
+            }
+
+            return employeeIdList;
+        }
     }
 }

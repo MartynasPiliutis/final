@@ -17,6 +17,8 @@ namespace PCMSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Pagrindinis());
+
+            
         }
     }
 }

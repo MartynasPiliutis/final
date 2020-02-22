@@ -105,7 +105,9 @@
             this.Controls.Add(this.dfind_button_find);
             this.Controls.Add(this.dfind_label_paieska);
             this.Name = "DarbuotojuPaieska";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Darbuotojų paieška";
+            this.Load += new System.EventHandler(this.DarbuotojuPaieska_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +121,5 @@
         private System.Windows.Forms.TextBox dfind_textbox_output;
         private System.Windows.Forms.Label dfind_lable_title;
         private System.Windows.Forms.Button dfind_button_back;
-    }
+    }   
 }

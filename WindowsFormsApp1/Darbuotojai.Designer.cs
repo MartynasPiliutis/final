@@ -99,6 +99,7 @@
             this.Controls.Add(this.darbuotojai_button_rasti);
             this.Controls.Add(this.darbuotojai_label_darbuotojai);
             this.Name = "Darbuotojai";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Darbuotojai";
             this.Load += new System.EventHandler(this.Darbuotojai_Load);
             this.ResumeLayout(false);

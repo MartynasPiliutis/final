@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCMLibrary;
 
 namespace PCMSystem
 {
@@ -15,12 +16,15 @@ namespace PCMSystem
         public DarbuotojuPaieska()
         {
             InitializeComponent();
+
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+            object[] theList = employeeRepository.GetAllEmployeeId();
+            dfind_dropbox_idList.Items.AddRange(theList);
         }
 
         private void dfind_dropbox_idList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("vienas");
-            Console.WriteLine("du");
+            
         }
 
         private void dfind_button_back_Click(object sender, EventArgs e)
@@ -29,6 +33,11 @@ namespace PCMSystem
             Darbuotojai darbuotojai = new Darbuotojai();
             darbuotojai.ShowDialog();
             this.Close();
+        }
+
+        private void DarbuotojuPaieska_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
