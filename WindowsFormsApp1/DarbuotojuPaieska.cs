@@ -16,15 +16,12 @@ namespace PCMSystem
         public DarbuotojuPaieska()
         {
             InitializeComponent();
-
-            EmployeeRepository employeeRepository = new EmployeeRepository();
-            object[] theList = employeeRepository.GetAllEmployeeId();
+            object[] theList = Program.employeeRepository.GetAllEmployeeId();
             dfind_dropbox_idList.Items.AddRange(theList);
         }
 
         private void dfind_dropbox_idList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void dfind_button_back_Click(object sender, EventArgs e)
@@ -36,6 +33,37 @@ namespace PCMSystem
         }
 
         private void DarbuotojuPaieska_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dfind_button_find_Click(object sender, EventArgs e)
+        {
+            dfind_textbox_output.Items.Clear();
+            
+            Employee darbuotojas = Program.employeeRepository.GetEmployeeById(Convert.ToInt32(dfind_dropbox_idList.SelectedItem));
+            dfind_textbox_output.Items.Add($"Darbuotojo ID: {darbuotojas.EmployeeId}");
+            dfind_textbox_output.Items.Add($"Darbuotojo vardas: {darbuotojas.NameSurname}");
+            dfind_textbox_output.Items.Add($"Darbuotojo teises:");
+            foreach (var item in Program.gateRepository.GetGateList())
+            {
+                string gate = item.GateName;
+                int gateId = item.GateId;
+                string leidimas;
+                bool pass = darbuotojas.CheckEmployeeHasRight(gateId);
+                if (pass == true) { leidimas = "Galima"; } else { leidimas = "Negalima"; }
+                dfind_textbox_output.Items.Add($"{gate} (ID: {gateId}): {leidimas}");
+            }
+
+            
+
+            
+            /*dfind_textbox_output.Items.Add($"Rytiniai: {darbuotojas.CheckEmployeeHasRight(32)}");
+            dfind_textbox_output.Items.Add($"Pietiniai: {darbuotojas.CheckEmployeeHasRight(33)}");
+            dfind_textbox_output.Items.Add($"Vakariniai: {darbuotojas.CheckEmployeeHasRight(34)}");*/
+        }
+
+        private void dfind_textbox_output_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

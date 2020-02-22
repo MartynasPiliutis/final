@@ -31,9 +31,9 @@
             this.dfind_label_paieska = new System.Windows.Forms.Label();
             this.dfind_button_find = new System.Windows.Forms.Button();
             this.dfind_dropbox_idList = new System.Windows.Forms.ComboBox();
-            this.dfind_textbox_output = new System.Windows.Forms.TextBox();
             this.dfind_lable_title = new System.Windows.Forms.Label();
             this.dfind_button_back = new System.Windows.Forms.Button();
+            this.dfind_textbox_output = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // dfind_label_paieska
@@ -53,6 +53,7 @@
             this.dfind_button_find.TabIndex = 1;
             this.dfind_button_find.Text = "Ieškoti";
             this.dfind_button_find.UseVisualStyleBackColor = true;
+            this.dfind_button_find.Click += new System.EventHandler(this.dfind_button_find_Click);
             // 
             // dfind_dropbox_idList
             // 
@@ -62,15 +63,6 @@
             this.dfind_dropbox_idList.Size = new System.Drawing.Size(121, 21);
             this.dfind_dropbox_idList.TabIndex = 2;
             this.dfind_dropbox_idList.SelectedIndexChanged += new System.EventHandler(this.dfind_dropbox_idList_SelectedIndexChanged);
-            // 
-            // dfind_textbox_output
-            // 
-            this.dfind_textbox_output.Location = new System.Drawing.Point(12, 156);
-            this.dfind_textbox_output.Multiline = true;
-            this.dfind_textbox_output.Name = "dfind_textbox_output";
-            this.dfind_textbox_output.ReadOnly = true;
-            this.dfind_textbox_output.Size = new System.Drawing.Size(394, 120);
-            this.dfind_textbox_output.TabIndex = 3;
             // 
             // dfind_lable_title
             // 
@@ -93,14 +85,24 @@
             this.dfind_button_back.UseVisualStyleBackColor = true;
             this.dfind_button_back.Click += new System.EventHandler(this.dfind_button_back_Click);
             // 
+            // dfind_textbox_output
+            // 
+            this.dfind_textbox_output.FormattingEnabled = true;
+            this.dfind_textbox_output.IntegralHeight = false;
+            this.dfind_textbox_output.Location = new System.Drawing.Point(12, 156);
+            this.dfind_textbox_output.Name = "dfind_textbox_output";
+            this.dfind_textbox_output.Size = new System.Drawing.Size(394, 120);
+            this.dfind_textbox_output.TabIndex = 6;
+            this.dfind_textbox_output.SelectedIndexChanged += new System.EventHandler(this.dfind_textbox_output_SelectedIndexChanged);
+            // 
             // DarbuotojuPaieska
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 326);
+            this.Controls.Add(this.dfind_textbox_output);
             this.Controls.Add(this.dfind_button_back);
             this.Controls.Add(this.dfind_lable_title);
-            this.Controls.Add(this.dfind_textbox_output);
             this.Controls.Add(this.dfind_dropbox_idList);
             this.Controls.Add(this.dfind_button_find);
             this.Controls.Add(this.dfind_label_paieska);
@@ -109,7 +111,6 @@
             this.Text = "Darbuotojų paieška";
             this.Load += new System.EventHandler(this.DarbuotojuPaieska_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -118,8 +119,8 @@
         private System.Windows.Forms.Label dfind_label_paieska;
         private System.Windows.Forms.Button dfind_button_find;
         private System.Windows.Forms.ComboBox dfind_dropbox_idList;
-        private System.Windows.Forms.TextBox dfind_textbox_output;
         private System.Windows.Forms.Label dfind_lable_title;
         private System.Windows.Forms.Button dfind_button_back;
+        private System.Windows.Forms.ListBox dfind_textbox_output;
     }   
 }
