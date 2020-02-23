@@ -16,13 +16,14 @@ namespace PCMSystem
         public TrintiDarbuotoja()
         {
             InitializeComponent();
+            delete_button_find.Enabled = false;
             object[] theList = Program.employeeRepository.GetAllEmployeeId();
             delete_dropbox_idList.Items.AddRange(theList);
         }
 
         private void delete_dropbox_idList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            delete_button_find.Enabled = true;
         }
 
         private void delete_button_find_Click(object sender, EventArgs e)
@@ -55,8 +56,15 @@ namespace PCMSystem
 
         private void delete_button_delete_Click(object sender, EventArgs e)
         {
-            Program.employeeRepository.RemoveEmployee(Convert.ToInt32(delete_dropbox_idList.SelectedItem));
+            Employee darbuotojas = Program.employeeRepository.GetEmployeeById(Convert.ToInt32(delete_dropbox_idList.SelectedItem));
+            var result = MessageBox.Show("Ar tikrai norite trinti šį darbuotoją:\n" + $"{darbuotojas.EmployeeId} {darbuotojas.NameSurname}", "Trinti Darbuotoją", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+            Program.employeeRepository.RemoveEmployee(Convert.ToInt32(darbuotojas.EmployeeId));
             delete_button_delete.Enabled = false;
+            delete_button_find.Enabled = false;
             delete_textbox_output.Items.Clear();
             delete_dropbox_idList.Items.Clear();
             object[] theList = Program.employeeRepository.GetAllEmployeeId();
