@@ -59,15 +59,27 @@ namespace PCMLibrary
             return null;
         }
 
-        public object[] GetAllGateNameAndCodeArray()
+        public object[,] GetAllGateNameAndCodeArray()
+        {
+            int arrayLenght = GateList.Count;
+            object[,] gateListArray = new object[arrayLenght, 2];
+            for (int i = 0; i < arrayLenght; i++)
+            {
+
+                gateListArray[i, 0] = GateList[i].GateId;
+                gateListArray[i, 1] = GateList[i].GateName;
+            }
+            return gateListArray;
+        }
+
+        public object[] GetAllGateNameAndCodeArrayV2()
         {
             int arrayLenght = GateList.Count;
             object[] gateListArray = new object[arrayLenght];
             for (int i = 0; i < arrayLenght; i++)
             {
-                gateListArray[i] = GateList[i];
+                gateListArray[i] = GateList[i].GateId;
             }
-
             return gateListArray;
         }
     }

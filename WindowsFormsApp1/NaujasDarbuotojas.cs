@@ -17,7 +17,8 @@ namespace PCMSystem
         {
             InitializeComponent();
 
-            object[] theList = Program.gateRepository.GetAllGateNameAndCodeArray();
+            
+            object[] theList = Program.gateRepository.GetAllGateNameAndCodeArrayV2();
             add_gates_dropbox.Items.AddRange(theList);
 
             int generateId = Program.employeeRepository.NewEmployeeIdGenerator();
@@ -34,16 +35,60 @@ namespace PCMSystem
 
         }
 
-        /*private void add_gate_add_Click(object sender, EventArgs e)
+        private void add_gate_add_Click(object sender, EventArgs e)
         {
-            int teisesId = add_gates_dropbox.Items.;
-            if (balas < 1 || balas > 10)
+            if (add_gates_dropbox.SelectedItem == null)
             {
-                MessageBox.Show("Neteisingai ivestas pazymys...");
+                MessageBox.Show("Nepazymeta reiksme...");
                 return;
             }
+            int gateId = Convert.ToInt32(add_gates_dropbox.SelectedItem);
+            string gate = Program.gateRepository.GetGateCodeByID(gateId);
+            string valueToAdd = Convert.ToString($"{gateId} {gate}");
 
-            add_listbox_selectGate.Items.Add($"{}");
-        }*/
+            if (add_button_add.Enabled == false)
+            {
+                add_listbox_selectGate.Items.Add($"{gateId} {gate}");
+                add_button_add.Enabled = true;
+            }
+            else
+            {
+                foreach (var item in add_listbox_selectGate.Items)
+                {
+                    string value = Convert.ToString(item);
+                    if (value == valueToAdd)
+                    {
+                        MessageBox.Show("Tokia reiksme jau pateikta...");
+                        return;
+                    }
+                    add_listbox_selectGate.Items.Add($"{valueToAdd}");
+                    /*else
+                    {
+                        add_listbox_selectGate.Items.Add($"{valueToAdd}");
+                        value = "";
+                    }*/
+                }
+            }
+             
+        }
+
+        private void add_gate_remove_Click(object sender, EventArgs e)
+        {
+            if (add_listbox_selectGate.SelectedItem == null)
+            {
+                MessageBox.Show("Nepazymeta reiksme...");
+                return;
+            }
+            
+            add_listbox_selectGate.Items.Remove(add_listbox_selectGate.Items[add_listbox_selectGate.SelectedIndex]);
+        }
+
+        private void add_button_clear_Click(object sender, EventArgs e)
+        {
+            add_texboxt_input_name.Clear();
+            add_listbox_selectGate.Items.Clear();
+            add_button_add.Enabled = false;
+        }
     }
+    
 }

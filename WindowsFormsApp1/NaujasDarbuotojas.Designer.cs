@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Darbuotojai_label_add = new System.Windows.Forms.Label();
             this.add_label_id = new System.Windows.Forms.Label();
             this.add_gates_dropbox = new System.Windows.Forms.ComboBox();
@@ -38,10 +39,12 @@
             this.add_gate_add = new System.Windows.Forms.Button();
             this.add_gate_remove = new System.Windows.Forms.Button();
             this.add_label_selectGate = new System.Windows.Forms.Label();
-            this.add_listbox_selectGate = new System.Windows.Forms.ListBox();
             this.add_button_add = new System.Windows.Forms.Button();
             this.add_button_clear = new System.Windows.Forms.Button();
             this.add_button_back = new System.Windows.Forms.Button();
+            this.gateRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.add_listbox_selectGate = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gateRepositoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Darbuotojai_label_add
@@ -65,7 +68,7 @@
             // 
             // add_gates_dropbox
             // 
-            this.add_gates_dropbox.FormattingEnabled = true;
+            this.add_gates_dropbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.add_gates_dropbox.IntegralHeight = false;
             this.add_gates_dropbox.Location = new System.Drawing.Point(158, 148);
             this.add_gates_dropbox.Name = "add_gates_dropbox";
@@ -118,7 +121,7 @@
             this.add_gate_add.TabIndex = 7;
             this.add_gate_add.Text = "+";
             this.add_gate_add.UseVisualStyleBackColor = true;
-            //this.add_gate_add.Click += new System.EventHandler(this.add_gate_add_Click);
+            this.add_gate_add.Click += new System.EventHandler(this.add_gate_add_Click);
             // 
             // add_gate_remove
             // 
@@ -129,6 +132,7 @@
             this.add_gate_remove.TabIndex = 8;
             this.add_gate_remove.Text = "-";
             this.add_gate_remove.UseVisualStyleBackColor = true;
+            this.add_gate_remove.Click += new System.EventHandler(this.add_gate_remove_Click);
             // 
             // add_label_selectGate
             // 
@@ -138,17 +142,9 @@
             this.add_label_selectGate.TabIndex = 9;
             this.add_label_selectGate.Text = "Pasirinkti vartai";
             // 
-            // add_listbox_selectGate
-            // 
-            this.add_listbox_selectGate.FormattingEnabled = true;
-            this.add_listbox_selectGate.IntegralHeight = false;
-            this.add_listbox_selectGate.Location = new System.Drawing.Point(158, 178);
-            this.add_listbox_selectGate.Name = "add_listbox_selectGate";
-            this.add_listbox_selectGate.Size = new System.Drawing.Size(100, 80);
-            this.add_listbox_selectGate.TabIndex = 10;
-            // 
             // add_button_add
             // 
+            this.add_button_add.Enabled = false;
             this.add_button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.add_button_add.Location = new System.Drawing.Point(38, 288);
             this.add_button_add.Name = "add_button_add";
@@ -166,6 +162,7 @@
             this.add_button_clear.TabIndex = 12;
             this.add_button_clear.Text = "Valyti";
             this.add_button_clear.UseVisualStyleBackColor = true;
+            this.add_button_clear.Click += new System.EventHandler(this.add_button_clear_Click);
             // 
             // add_button_back
             // 
@@ -176,6 +173,19 @@
             this.add_button_back.TabIndex = 13;
             this.add_button_back.Text = "Grįžti";
             this.add_button_back.UseVisualStyleBackColor = true;
+            // 
+            // gateRepositoryBindingSource
+            // 
+            this.gateRepositoryBindingSource.DataSource = typeof(PCMLibrary.GateRepository);
+            // 
+            // add_listbox_selectGate
+            // 
+            this.add_listbox_selectGate.FormattingEnabled = true;
+            this.add_listbox_selectGate.IntegralHeight = false;
+            this.add_listbox_selectGate.Location = new System.Drawing.Point(158, 178);
+            this.add_listbox_selectGate.Name = "add_listbox_selectGate";
+            this.add_listbox_selectGate.Size = new System.Drawing.Size(100, 80);
+            this.add_listbox_selectGate.TabIndex = 10;
             // 
             // NaujasDarbuotojas
             // 
@@ -199,6 +209,7 @@
             this.Name = "NaujasDarbuotojas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Naujas Darbuotojas";
+            ((System.ComponentModel.ISupportInitialize)(this.gateRepositoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,9 +227,10 @@
         private System.Windows.Forms.Button add_gate_add;
         private System.Windows.Forms.Button add_gate_remove;
         private System.Windows.Forms.Label add_label_selectGate;
-        private System.Windows.Forms.ListBox add_listbox_selectGate;
         private System.Windows.Forms.Button add_button_add;
         private System.Windows.Forms.Button add_button_clear;
         private System.Windows.Forms.Button add_button_back;
+        private System.Windows.Forms.BindingSource gateRepositoryBindingSource;
+        private System.Windows.Forms.ListBox add_listbox_selectGate;
     }
 }
