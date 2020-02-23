@@ -57,6 +57,7 @@
             // 
             // dfind_dropbox_idList
             // 
+            this.dfind_dropbox_idList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dfind_dropbox_idList.FormattingEnabled = true;
             this.dfind_dropbox_idList.Location = new System.Drawing.Point(12, 111);
             this.dfind_dropbox_idList.Name = "dfind_dropbox_idList";

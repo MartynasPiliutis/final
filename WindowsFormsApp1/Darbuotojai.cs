@@ -24,7 +24,10 @@ namespace PCMSystem
 
         private void darbuotojai_button_remove_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            TrintiDarbuotoja trintiDarbuotoja = new TrintiDarbuotoja();
+            trintiDarbuotoja.ShowDialog();
+            this.Close();
         }
 
         private void darbuotojai_button_back_Click(object sender, EventArgs e)

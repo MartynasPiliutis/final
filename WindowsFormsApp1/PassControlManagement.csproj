@@ -58,6 +58,12 @@
     <Compile Include="DarbuotojuPaieska.Designer.cs">
       <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrintiDarbuotoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrintiDarbuotoja.Designer.cs">
+      <DependentUpon>TrintiDarbuotoja.cs</DependentUpon>
+    </Compile>
     <Compile Include="NaujasDarbuotojas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TrintiDarbuotoja.resx">
+      <DependentUpon>TrintiDarbuotoja.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\PCMLibrary.GateRepository.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
