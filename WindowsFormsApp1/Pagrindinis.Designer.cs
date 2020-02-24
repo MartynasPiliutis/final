@@ -72,6 +72,7 @@
             this.main_button_vartai.TabIndex = 2;
             this.main_button_vartai.Text = "Praėjimai";
             this.main_button_vartai.UseVisualStyleBackColor = true;
+            this.main_button_vartai.Click += new System.EventHandler(this.main_button_vartai_Click);
             // 
             // main_button_ivykiai
             // 

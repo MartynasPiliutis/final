@@ -58,6 +58,30 @@
     <Compile Include="DarbuotojuPaieska.Designer.cs">
       <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrintiPraejima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrintiPraejima.Designer.cs">
+      <DependentUpon>TrintiPraejima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NaujasPraejimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NaujasPraejimas.Designer.cs">
+      <DependentUpon>NaujasPraejimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VartuPaieska.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VartuPaieska.Designer.cs">
+      <DependentUpon>VartuPaieska.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vartai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vartai.Designer.cs">
+      <DependentUpon>Vartai.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrintiDarbuotoja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +107,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DarbuotojuPaieska.resx">
       <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrintiPraejima.resx">
+      <DependentUpon>TrintiPraejima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NaujasPraejimas.resx">
+      <DependentUpon>NaujasPraejimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VartuPaieska.resx">
+      <DependentUpon>VartuPaieska.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vartai.resx">
+      <DependentUpon>Vartai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NaujasDarbuotojas.resx">
       <DependentUpon>NaujasDarbuotojas.cs</DependentUpon>

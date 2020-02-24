@@ -26,10 +26,10 @@ namespace PCMLibrary
 
         public void AddNewGate(int newGateId, string newGateName)
         {
-                if (GetGateCodeByID(newGateId) == null)
-                {
+            if (GetGateCodeByID(newGateId) == null)
+            {
                 GateList.Add(new Gate(newGateId, newGateName));
-                }
+            }
         }
 
         public void RemoveGate(int removeGateId)
@@ -81,6 +81,14 @@ namespace PCMLibrary
                 gateListArray[i] = GateList[i].GateId;
             }
             return gateListArray;
+        }
+
+        public int NewGateIdGenerator()
+        {
+            List<Gate> currentList = GetGateList();
+            int idMax = currentList.Max(lastId => lastId.GateId);
+            int idNew = idMax + 1;
+            return idNew;
         }
     }
 }

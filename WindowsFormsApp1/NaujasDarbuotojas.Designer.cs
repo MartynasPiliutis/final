@@ -173,6 +173,7 @@
             this.add_button_back.TabIndex = 13;
             this.add_button_back.Text = "Grįžti";
             this.add_button_back.UseVisualStyleBackColor = true;
+            this.add_button_back.Click += new System.EventHandler(this.add_button_back_Click);
             // 
             // gateRepositoryBindingSource
             // 

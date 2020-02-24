@@ -32,5 +32,13 @@ namespace PCMSystem
         {
             Close();
         }
+
+        private void main_button_vartai_Click(object sender, EventArgs e)
+        {
+            Vartai vartai = new Vartai();
+            this.Hide();
+            vartai.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -48,25 +48,24 @@ namespace PCMSystem
 
             if (add_button_add.Enabled == false)
             {
-                add_listbox_selectGate.Items.Add($"{gateId} {gate}");
+                add_listbox_selectGate.Items.Add($"{gateId}");
                 add_button_add.Enabled = true;
             }
             else
             {
                 foreach (var item in add_listbox_selectGate.Items)
                 {
-                    string value = Convert.ToString(item);
-                    if (value == valueToAdd)
+                    int value = Convert.ToInt32(item);
+                    MessageBox.Show($"{value}");
+                    if (value == gateId)
                     {
                         MessageBox.Show("Tokia reiksme jau pateikta...");
                         return;
                     }
-                    add_listbox_selectGate.Items.Add($"{valueToAdd}");
-                    /*else
+                    else
                     {
-                        add_listbox_selectGate.Items.Add($"{valueToAdd}");
-                        value = "";
-                    }*/
+                        add_listbox_selectGate.Items.Add($"{gateId}");
+                    }
                 }
             }
              
@@ -88,6 +87,14 @@ namespace PCMSystem
             add_texboxt_input_name.Clear();
             add_listbox_selectGate.Items.Clear();
             add_button_add.Enabled = false;
+        }
+
+        private void add_button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Darbuotojai darbuotojai = new Darbuotojai();
+            darbuotojai.ShowDialog();
+            this.Close();
         }
     }
     
