@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.main_button_exit = new System.Windows.Forms.Button();
+            this.report_button_back = new System.Windows.Forms.Button();
             this.report_button_data = new System.Windows.Forms.Button();
             this.report_button_vartai = new System.Windows.Forms.Button();
             this.report_button_darbuotojai = new System.Windows.Forms.Button();
@@ -36,16 +36,16 @@
             this.report_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // main_button_exit
+            // report_button_back
             // 
-            this.main_button_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.main_button_exit.Location = new System.Drawing.Point(168, 272);
-            this.main_button_exit.Name = "main_button_exit";
-            this.main_button_exit.Size = new System.Drawing.Size(80, 25);
-            this.main_button_exit.TabIndex = 11;
-            this.main_button_exit.Text = "Baigti";
-            this.main_button_exit.UseVisualStyleBackColor = true;
-            this.main_button_exit.Click += new System.EventHandler(this.main_button_exit_Click);
+            this.report_button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.report_button_back.Location = new System.Drawing.Point(168, 272);
+            this.report_button_back.Name = "report_button_back";
+            this.report_button_back.Size = new System.Drawing.Size(80, 25);
+            this.report_button_back.TabIndex = 11;
+            this.report_button_back.Text = "Grįžti";
+            this.report_button_back.UseVisualStyleBackColor = true;
+            this.report_button_back.Click += new System.EventHandler(this.report_button_back_Click);
             // 
             // report_button_data
             // 
@@ -86,7 +86,7 @@
             this.report_button_darbuotojai.TabIndex = 8;
             this.report_button_darbuotojai.Text = "Darbuotojai";
             this.report_button_darbuotojai.UseVisualStyleBackColor = true;
-            this.report_button_darbuotojai.Click += new System.EventHandler(this.main_button_vartai_Click);
+            this.report_button_darbuotojai.Click += new System.EventHandler(this.report_button_darbuotojai_Click);
             // 
             // report_button_all
             // 
@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 326);
-            this.Controls.Add(this.main_button_exit);
+            this.Controls.Add(this.report_button_back);
             this.Controls.Add(this.report_button_data);
             this.Controls.Add(this.report_button_vartai);
             this.Controls.Add(this.report_button_darbuotojai);
@@ -126,13 +126,14 @@
             this.Name = "Ataskaitos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ataskaitos";
+            this.Load += new System.EventHandler(this.Ataskaitos_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button main_button_exit;
+        private System.Windows.Forms.Button report_button_back;
         private System.Windows.Forms.Button report_button_data;
         private System.Windows.Forms.Button report_button_vartai;
         private System.Windows.Forms.Button report_button_darbuotojai;

@@ -17,9 +17,12 @@ namespace PCMSystem
             InitializeComponent();
         }
 
-        private void main_button_vartai_Click(object sender, EventArgs e)
+        private void report_button_darbuotojai_Click(object sender, EventArgs e)
         {
-
+            AtaskaitaDarbuotojai ataskaitaDarbuotojai = new AtaskaitaDarbuotojai();
+            this.Hide();
+            ataskaitaDarbuotojai.ShowDialog();
+            this.Close();
         }
 
         private void report_button_vartai_Click(object sender, EventArgs e)
@@ -35,7 +38,15 @@ namespace PCMSystem
             this.Close();
         }
 
-        private void main_button_exit_Click(object sender, EventArgs e)
+        private void report_button_back_Click(object sender, EventArgs e)
+        {
+            Pagrindinis pagrindinis = new Pagrindinis();
+            this.Hide();
+            pagrindinis.ShowDialog();
+            this.Close();
+        }
+
+        private void Ataskaitos_Load(object sender, EventArgs e)
         {
 
         }
