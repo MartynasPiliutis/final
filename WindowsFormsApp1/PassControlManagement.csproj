@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtaskaitaPagalData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtaskaitaPagalData.Designer.cs">
+      <DependentUpon>AtaskaitaPagalData.cs</DependentUpon>
+    </Compile>
     <Compile Include="AtaskaitaPraejimai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AtaskaitaPagalData.resx">
+      <DependentUpon>AtaskaitaPagalData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AtaskaitaPraejimai.resx">
       <DependentUpon>AtaskaitaPraejimai.cs</DependentUpon>
     </EmbeddedResource>

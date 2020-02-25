@@ -59,6 +59,7 @@
             this.report_button_data.TabIndex = 10;
             this.report_button_data.Text = "Pagal datą";
             this.report_button_data.UseVisualStyleBackColor = true;
+            this.report_button_data.Click += new System.EventHandler(this.report_button_data_Click);
             // 
             // report_button_vartai
             // 

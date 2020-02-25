@@ -100,7 +100,7 @@ namespace PCMLibrary
             {
                 if (item.PassTime >= start && item.PassTime <= end)
                 {
-                    reportPeriod.Add(new ReportPeriod(item.EmployeeId, employeeRepository.GetEmployeeById(item.EmployeeId).NameSurname, item.PassTime, item.Pass));
+                    reportPeriod.Add(new ReportPeriod(item.EmployeeId, employeeRepository.GetEmployeeById(item.EmployeeId).NameSurname, item.GateId, item.PassTime, item.Pass));
                 }
             }
             return reportPeriod;

@@ -53,5 +53,13 @@ namespace PCMSystem
         {
 
         }
+
+        private void report_button_data_Click(object sender, EventArgs e)
+        {
+            AtaskaitaPagalData ataskaitaPagalData = new AtaskaitaPagalData();
+            this.Hide();
+            ataskaitaPagalData.ShowDialog();
+            this.Close();
+        }
     }
 }
