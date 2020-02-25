@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ataskaita_Visi));
             this.report_button_close = new System.Windows.Forms.Button();
             this.Ataskaita_dataGridView = new System.Windows.Forms.DataGridView();
+            this.event_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.darbuotojoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +56,7 @@
             this.Ataskaita_dataGridView.AllowUserToResizeRows = false;
             this.Ataskaita_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Ataskaita_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.event_id,
             this.nr,
             this.darbuotojoId,
             this.name,
@@ -65,6 +67,12 @@
             resources.ApplyResources(this.Ataskaita_dataGridView, "Ataskaita_dataGridView");
             this.Ataskaita_dataGridView.Name = "Ataskaita_dataGridView";
             this.Ataskaita_dataGridView.RowHeadersVisible = false;
+            // 
+            // event_id
+            // 
+            resources.ApplyResources(this.event_id, "event_id");
+            this.event_id.Name = "event_id";
+            this.event_id.ReadOnly = true;
             // 
             // nr
             // 
@@ -133,6 +141,7 @@
 
         private System.Windows.Forms.Button report_button_close;
         private System.Windows.Forms.DataGridView Ataskaita_dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn event_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nr;
         private System.Windows.Forms.DataGridViewTextBoxColumn darbuotojoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;

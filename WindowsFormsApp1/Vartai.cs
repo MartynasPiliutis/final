@@ -19,33 +19,41 @@ namespace PCMSystem
 
         private void gates_button_back_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Pagrindinis main = new Pagrindinis();
+            this.Hide();
             main.ShowDialog();
             this.Close();
         }
 
         private void gates_button_rasti_Click(object sender, EventArgs e)
         {
-            this.Hide();
             VartuPaieska vartuPaieska = new VartuPaieska();
+            this.Hide();
             vartuPaieska.ShowDialog();
             this.Close();
         }
 
         private void gates_button_add_Click(object sender, EventArgs e)
         {
-            this.Hide();
             NaujiVartai naujiVartai = new NaujiVartai();
+            this.Hide();
             naujiVartai.ShowDialog();
             this.Close();
         }
 
         private void gates_button_remove_Click(object sender, EventArgs e)
         {
-            this.Hide();
             TrintiPraejima trintiPraejima = new TrintiPraejima();
+            this.Hide();
             trintiPraejima.ShowDialog();
+            this.Close();
+        }
+
+        private void gates_button_test_Click(object sender, EventArgs e)
+        {
+            PraejimasTestas praejimasTestas = new PraejimasTestas();
+            this.Hide();
+            praejimasTestas.ShowDialog();
             this.Close();
         }
     }

@@ -80,7 +80,6 @@
             this.addgate_texboxt_input_name.Name = "addgate_texboxt_input_name";
             this.addgate_texboxt_input_name.Size = new System.Drawing.Size(200, 20);
             this.addgate_texboxt_input_name.TabIndex = 19;
-            this.addgate_texboxt_input_name.UseWaitCursor = true;
             this.addgate_texboxt_input_name.TextChanged += new System.EventHandler(this.addgate_texboxt_input_name_TextChanged);
             // 
             // add_label_name

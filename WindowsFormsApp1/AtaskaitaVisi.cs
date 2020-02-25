@@ -26,6 +26,7 @@ namespace PCMSystem
             int rowNr = 0;
             foreach (var item in listToReport)
             {
+                long id = item.EventId;
                 int employeeId = item.EmployeeId;
                 string name = Program.employeeRepository.GetEmployeeById(item.EmployeeId).NameSurname;
                 string gate = Program.gateRepository.GetGateCodeByID(item.GateId);
@@ -34,13 +35,14 @@ namespace PCMSystem
                 bool raktas = item.Pass;
 
                 Ataskaita_dataGridView.Rows.Add();
-                Ataskaita_dataGridView.Rows[rowNr].Cells[0].Value = eilNr;
-                Ataskaita_dataGridView.Rows[rowNr].Cells[1].Value = employeeId;
-                Ataskaita_dataGridView.Rows[rowNr].Cells[2].Value = name;
-                Ataskaita_dataGridView.Rows[rowNr].Cells[3].Value = gate;
-                Ataskaita_dataGridView.Rows[rowNr].Cells[4].Value = data;
-                Ataskaita_dataGridView.Rows[rowNr].Cells[5].Value = time;
-                Ataskaita_dataGridView.Rows[rowNr].Cells[6].Value = raktas;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[0].Value = id;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[1].Value = eilNr;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[2].Value = employeeId;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[3].Value = name;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[4].Value = gate;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[5].Value = data;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[6].Value = time;
+                Ataskaita_dataGridView.Rows[rowNr].Cells[7].Value = raktas;
                 rowNr++;
                 eilNr++;
             }

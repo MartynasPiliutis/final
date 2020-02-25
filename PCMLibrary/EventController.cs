@@ -21,9 +21,7 @@ namespace PCMLibrary
         {
             Employee employee = employeeRepository.GetEmployeeById(employeeId);
             bool employeePass;
-            int employeeIdFind = employee.EmployeeId;
             employeePass = employee.CheckEmployeeHasRight(gateIdPass);
-            EventList.Add(new Event(GetNewEventId(), employeeId, gateIdPass, GetNewEventPassTime(), employeePass));
             return employeePass;
         }
 
@@ -31,7 +29,6 @@ namespace PCMLibrary
         {
             Employee employee = employeeRepository.GetEmployeeById(employeeId);
             bool employeePass;
-            int employeeIdFind = employee.EmployeeId;
             employeePass = employee.CheckEmployeeHasRight(gateIdPass);
             Event actionSave = new Event(GetNewEventId(), employeeId, gateIdPass, GetNewEventPassTime(), employeePass);
             EventList.Add(actionSave);

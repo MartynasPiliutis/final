@@ -31,7 +31,6 @@
             this.main_label_pcms = new System.Windows.Forms.Label();
             this.main_button_darbuotojai = new System.Windows.Forms.Button();
             this.main_button_vartai = new System.Windows.Forms.Button();
-            this.main_button_ivykiai = new System.Windows.Forms.Button();
             this.main_button_ataskaitos = new System.Windows.Forms.Button();
             this.main_button_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -75,27 +74,13 @@
             this.main_button_vartai.UseVisualStyleBackColor = true;
             this.main_button_vartai.Click += new System.EventHandler(this.main_button_vartai_Click);
             // 
-            // main_button_ivykiai
-            // 
-            this.main_button_ivykiai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.main_button_ivykiai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.main_button_ivykiai.Location = new System.Drawing.Point(38, 180);
-            this.main_button_ivykiai.Name = "main_button_ivykiai";
-            this.main_button_ivykiai.Size = new System.Drawing.Size(340, 40);
-            this.main_button_ivykiai.TabIndex = 3;
-            this.main_button_ivykiai.Text = "Įvykiai";
-            this.main_button_ivykiai.UseVisualStyleBackColor = true;
-            this.main_button_ivykiai.Click += new System.EventHandler(this.main_button_ivykiai_Click);
-            // 
             // main_button_ataskaitos
             // 
             this.main_button_ataskaitos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.main_button_ataskaitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.main_button_ataskaitos.Location = new System.Drawing.Point(38, 226);
+            this.main_button_ataskaitos.Location = new System.Drawing.Point(38, 180);
             this.main_button_ataskaitos.Name = "main_button_ataskaitos";
             this.main_button_ataskaitos.Size = new System.Drawing.Size(340, 40);
             this.main_button_ataskaitos.TabIndex = 4;
@@ -121,7 +106,6 @@
             this.ClientSize = new System.Drawing.Size(418, 326);
             this.Controls.Add(this.main_button_exit);
             this.Controls.Add(this.main_button_ataskaitos);
-            this.Controls.Add(this.main_button_ivykiai);
             this.Controls.Add(this.main_button_vartai);
             this.Controls.Add(this.main_button_darbuotojai);
             this.Controls.Add(this.main_label_pcms);
@@ -135,7 +119,6 @@
         #endregion
         private System.Windows.Forms.Button main_button_darbuotojai;
         private System.Windows.Forms.Button main_button_vartai;
-        private System.Windows.Forms.Button main_button_ivykiai;
         private System.Windows.Forms.Label main_label_pcms;
         private System.Windows.Forms.Button main_button_ataskaitos;
         private System.Windows.Forms.Button main_button_exit;

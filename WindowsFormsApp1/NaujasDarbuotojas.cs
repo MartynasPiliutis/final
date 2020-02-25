@@ -66,6 +66,7 @@ namespace PCMSystem
             int newEmployeeId = Convert.ToInt32(add_textbox_autoId.Text);
             string newEmployeeName = add_texboxt_input_name.Text;
             Program.employeeRepository.AddNewEmployee(newEmployeeId, newEmployeeName, gateList);
+            MessageBox.Show("Naujas darbuotojas pridėtas!\n" + $"ID: {newEmployeeId}, Vardas: {newEmployeeName}");
             checkedListBox_gates.Items.Clear();
             object[] theList = Program.gateRepository.GetAllGateNameAndCodeArrayV2();
             checkedListBox_gates.Items.AddRange(theList);

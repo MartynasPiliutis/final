@@ -14,6 +14,7 @@ namespace PCMSystem
         public static EventRepository eventRepository = new EventRepository();
         public static List<Event> EventList = new List<Event>();
         public static ReportGenerator reportGenerator = new ReportGenerator(employeeRepository, gateRepository, EventList);
+        public static EventController eventController = new EventController(employeeRepository);
 
         /// <summary>
         /// The main entry point for the application.

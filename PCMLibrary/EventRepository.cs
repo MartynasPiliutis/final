@@ -4084,5 +4084,15 @@ namespace PCMLibrary
 
             return OneDayReport;
         }
+        public void SaveTryPass(int employeeId, int gateIdPass, Employee employeeDetails)
+        {
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+            EventController eventController = new EventController(employeeRepository);
+            Employee employee = employeeDetails;
+            bool employeePass;
+            employeePass = employee.CheckEmployeeHasRight(gateIdPass);
+            Event actionSave = new Event(eventController.GetNewEventId(), employeeId, gateIdPass, eventController.GetNewEventPassTime(), employeePass);
+            EventList.Add(actionSave);
+        }
     }
 }

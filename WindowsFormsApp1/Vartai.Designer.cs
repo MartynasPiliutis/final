@@ -56,6 +56,7 @@
             this.gates_button_test.TabIndex = 8;
             this.gates_button_test.Text = "Testuoti";
             this.gates_button_test.UseVisualStyleBackColor = true;
+            this.gates_button_test.Click += new System.EventHandler(this.gates_button_test_Click);
             // 
             // gates_button_add
             // 
