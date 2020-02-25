@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PCMSystem
 {
@@ -117,7 +118,17 @@ namespace PCMSystem
                 rowNr++;
                 eilNr++;
             }
-            
+            using (TextWriter tw = new StreamWriter("C:\\Users\\kooky\\Documents\\DOTNET\\reports\\ataskaitaDarbuotojuValandos.txt"))
+            {
+                for (int i = 0; i < Ataskaita_dataGridView.Rows.Count; i++)
+                {
+                    for (int j = 0; j < Ataskaita_dataGridView.Columns.Count; j++)
+                    {
+                        tw.Write($"{Ataskaita_dataGridView.Rows[i].Cells[j].Value.ToString()},");
+                    }
+                    tw.WriteLine();
+                }
+            }
         }
 
         /*private void UzpildytiAtaskaita(ref int eilNr, ref int rowNr, ReportPeriod item)

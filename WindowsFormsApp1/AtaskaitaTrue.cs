@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCMLibrary;
+using System.IO;
 
 namespace PCMSystem
 {
@@ -44,6 +45,17 @@ namespace PCMSystem
                     Ataskaita_dataGridView.Rows[rowNr].Cells[6].Value = raktas;
                     rowNr++;
                     eilNr++;
+                }
+            }
+            using (TextWriter tw = new StreamWriter("C:\\Users\\kooky\\Documents\\DOTNET\\reports\\ataskaitaTrue.txt"))
+            {
+                for (int i = 0; i < Ataskaita_dataGridView.Rows.Count; i++)
+                {
+                    for (int j = 0; j < Ataskaita_dataGridView.Columns.Count; j++)
+                    {
+                        tw.Write($"{Ataskaita_dataGridView.Rows[i].Cells[j].Value.ToString()},");
+                    }
+                    tw.WriteLine();
                 }
             }
         }

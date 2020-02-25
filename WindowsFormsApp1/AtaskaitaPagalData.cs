@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCMLibrary;
+using System.IO;
 
 namespace PCMSystem
 {
@@ -94,7 +95,17 @@ namespace PCMSystem
                     }
                 }
             }
-
+            using (TextWriter tw = new StreamWriter("C:\\Users\\kooky\\Documents\\DOTNET\\reports\\ataskaitaPagalData.txt"))
+            {
+                for (int i = 0; i < Ataskaita_dataGridView.Rows.Count; i++)
+                {
+                    for (int j = 0; j < Ataskaita_dataGridView.Columns.Count; j++)
+                    {
+                        tw.Write($"{Ataskaita_dataGridView.Rows[i].Cells[j].Value.ToString()},");
+                    }
+                    tw.WriteLine();
+                }
+            }
         }
 
         private void UzpildytiAtaskaita(ref int eilNr, ref int rowNr, ReportPeriod item)
@@ -103,6 +114,7 @@ namespace PCMSystem
             string gate = Program.gateRepository.GetGateCodeByID(item.GateId);
             DateTime data = item.PassTime;
             bool raktas = item.Pass;
+
             Ataskaita_dataGridView.Rows.Add();
             Ataskaita_dataGridView.Rows[rowNr].Cells[0].Value = eilNr;
             Ataskaita_dataGridView.Rows[rowNr].Cells[1].Value = item.EmployeeId;
@@ -111,8 +123,12 @@ namespace PCMSystem
             Ataskaita_dataGridView.Rows[rowNr].Cells[4].Value = gate;
             Ataskaita_dataGridView.Rows[rowNr].Cells[5].Value = data;
             Ataskaita_dataGridView.Rows[rowNr].Cells[6].Value = raktas;
+            
+            
             rowNr++;
             eilNr++;
         }
+        
+
     }
 }
