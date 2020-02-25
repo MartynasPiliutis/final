@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtaskaitaPraejimai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtaskaitaPraejimai.Designer.cs">
+      <DependentUpon>AtaskaitaPraejimai.cs</DependentUpon>
+    </Compile>
     <Compile Include="AtaskaitaTrue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AtaskaitaPraejimai.resx">
+      <DependentUpon>AtaskaitaPraejimai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AtaskaitaDarbuotojai.resx">
       <DependentUpon>AtaskaitaDarbuotojai.cs</DependentUpon>
     </EmbeddedResource>

@@ -27,7 +27,10 @@ namespace PCMSystem
 
         private void report_button_vartai_Click(object sender, EventArgs e)
         {
-
+            AtaskaitaPraejimai ataskaitosPraejimai = new AtaskaitaPraejimai();
+            this.Hide();
+            ataskaitosPraejimai.ShowDialog();
+            this.Close();
         }
 
         private void report_button_all_Click(object sender, EventArgs e)
