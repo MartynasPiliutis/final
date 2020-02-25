@@ -84,7 +84,7 @@ namespace PCMLibrary
                 if (totalHours != 0)
                 {
                     string name = employeeRepository.GetEmployeeById(id).NameSurname;
-                    reportTotalHours.Add(new ReportTotalHours(name, totalHours));
+                    reportTotalHours.Add(new ReportTotalHours(id, name, totalHours));
                 }
                 
             }

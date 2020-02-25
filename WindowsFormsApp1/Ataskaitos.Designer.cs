@@ -109,7 +109,7 @@
             this.report_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.report_label.Location = new System.Drawing.Point(38, 42);
             this.report_label.Name = "report_label";
-            this.report_label.Size = new System.Drawing.Size(340, 125);
+            this.report_label.Size = new System.Drawing.Size(340, 40);
             this.report_label.TabIndex = 6;
             this.report_label.Text = "Ataskaitos";
             this.report_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
