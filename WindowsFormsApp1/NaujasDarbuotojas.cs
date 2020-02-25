@@ -16,76 +16,17 @@ namespace PCMSystem
         public NaujasDarbuotojas()
         {
             InitializeComponent();
-
-            
+            checkedListBox_gates.Enabled = false;
             object[] theList = Program.gateRepository.GetAllGateNameAndCodeArrayV2();
-            add_gates_dropbox.Items.AddRange(theList);
+            checkedListBox_gates.Items.AddRange(theList);
 
             int generateId = Program.employeeRepository.NewEmployeeIdGenerator();
             add_textbox_autoId.Text = Convert.ToString(generateId);
         }
 
-        private void add_textbox_autoId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void add_gates_dropbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void add_gate_add_Click(object sender, EventArgs e)
-        {
-            if (add_gates_dropbox.SelectedItem == null)
-            {
-                MessageBox.Show("Nepazymeta reiksme...");
-                return;
-            }
-            int gateId = Convert.ToInt32(add_gates_dropbox.SelectedItem);
-            string gate = Program.gateRepository.GetGateCodeByID(gateId);
-            string valueToAdd = Convert.ToString($"{gateId} {gate}");
-
-            if (add_button_add.Enabled == false)
-            {
-                add_listbox_selectGate.Items.Add($"{gateId}");
-                add_button_add.Enabled = true;
-            }
-            else
-            {
-                foreach (var item in add_listbox_selectGate.Items)
-                {
-                    int value = Convert.ToInt32(item);
-                    MessageBox.Show($"{value}");
-                    if (value == gateId)
-                    {
-                        MessageBox.Show("Tokia reiksme jau pateikta...");
-                        return;
-                    }
-                    else
-                    {
-                        add_listbox_selectGate.Items.Add($"{gateId}");
-                    }
-                }
-            }
-             
-        }
-
-        private void add_gate_remove_Click(object sender, EventArgs e)
-        {
-            if (add_listbox_selectGate.SelectedItem == null)
-            {
-                MessageBox.Show("Nepazymeta reiksme...");
-                return;
-            }
-            
-            add_listbox_selectGate.Items.Remove(add_listbox_selectGate.Items[add_listbox_selectGate.SelectedIndex]);
-        }
-
         private void add_button_clear_Click(object sender, EventArgs e)
         {
             add_texboxt_input_name.Clear();
-            add_listbox_selectGate.Items.Clear();
             add_button_add.Enabled = false;
         }
 
@@ -95,6 +36,46 @@ namespace PCMSystem
             Darbuotojai darbuotojai = new Darbuotojai();
             darbuotojai.ShowDialog();
             this.Close();
+        }
+
+        private void checkedListBox_gates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            add_button_add.Enabled = true;
+        }
+
+        private void add_texboxt_input_name_TextChanged(object sender, EventArgs e)
+        {
+            checkedListBox_gates.Enabled = true;
+            if (add_texboxt_input_name.TextLength == 0 )
+            {
+                checkedListBox_gates.Enabled = false;
+                checkedListBox_gates.Items.Clear();
+                object[] theList = Program.gateRepository.GetAllGateNameAndCodeArrayV2();
+                checkedListBox_gates.Items.AddRange(theList);
+            }
+        }
+
+        private void add_button_add_Click(object sender, EventArgs e)
+        {
+            List<int> gateList = new List<int>();
+            foreach (var item in checkedListBox_gates.CheckedItems)
+            {
+                int gateId = Convert.ToInt32(item);
+                gateList.Add(gateId);
+            }
+            int newEmployeeId = Convert.ToInt32(add_textbox_autoId.Text);
+            string newEmployeeName = add_texboxt_input_name.Text;
+            Program.employeeRepository.AddNewEmployee(newEmployeeId, newEmployeeName, gateList);
+            checkedListBox_gates.Items.Clear();
+            object[] theList = Program.gateRepository.GetAllGateNameAndCodeArrayV2();
+            checkedListBox_gates.Items.AddRange(theList);
+            checkedListBox_gates.Enabled = false;
+            add_button_add.Enabled = false;
+            checkedListBox_gates.Enabled = false;
+            add_texboxt_input_name.ResetText();
+            add_textbox_autoId.ResetText();
+            int generateId = Program.employeeRepository.NewEmployeeIdGenerator();
+            add_textbox_autoId.Text = Convert.ToString(generateId);
         }
     }
     
