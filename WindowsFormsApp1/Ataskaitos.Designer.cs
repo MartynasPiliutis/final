@@ -34,12 +34,13 @@
             this.report_button_darbuotojai = new System.Windows.Forms.Button();
             this.report_button_all = new System.Windows.Forms.Button();
             this.report_label = new System.Windows.Forms.Label();
+            this.report_button_reportHours = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // report_button_back
             // 
             this.report_button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.report_button_back.Location = new System.Drawing.Point(168, 272);
+            this.report_button_back.Location = new System.Drawing.Point(168, 357);
             this.report_button_back.Name = "report_button_back";
             this.report_button_back.Size = new System.Drawing.Size(80, 25);
             this.report_button_back.TabIndex = 11;
@@ -108,16 +109,31 @@
             this.report_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.report_label.Location = new System.Drawing.Point(38, 42);
             this.report_label.Name = "report_label";
-            this.report_label.Size = new System.Drawing.Size(340, 40);
+            this.report_label.Size = new System.Drawing.Size(340, 125);
             this.report_label.TabIndex = 6;
             this.report_label.Text = "Ataskaitos";
             this.report_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // report_button_reportHours
+            // 
+            this.report_button_reportHours.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.report_button_reportHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.report_button_reportHours.Location = new System.Drawing.Point(38, 272);
+            this.report_button_reportHours.Name = "report_button_reportHours";
+            this.report_button_reportHours.Size = new System.Drawing.Size(340, 40);
+            this.report_button_reportHours.TabIndex = 12;
+            this.report_button_reportHours.Text = "Darbuotojų valandos";
+            this.report_button_reportHours.UseVisualStyleBackColor = true;
+            this.report_button_reportHours.Click += new System.EventHandler(this.report_button_reportHours_Click);
             // 
             // Ataskaitos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 326);
+            this.ClientSize = new System.Drawing.Size(418, 411);
+            this.Controls.Add(this.report_button_reportHours);
             this.Controls.Add(this.report_button_back);
             this.Controls.Add(this.report_button_data);
             this.Controls.Add(this.report_button_vartai);
@@ -140,5 +156,6 @@
         private System.Windows.Forms.Button report_button_darbuotojai;
         private System.Windows.Forms.Button report_button_all;
         private System.Windows.Forms.Label report_label;
+        private System.Windows.Forms.Button report_button_reportHours;
     }
 }

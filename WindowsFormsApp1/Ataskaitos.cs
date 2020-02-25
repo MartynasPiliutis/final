@@ -61,5 +61,13 @@ namespace PCMSystem
             ataskaitaPagalData.ShowDialog();
             this.Close();
         }
+
+        private void report_button_reportHours_Click(object sender, EventArgs e)
+        {
+            AtaskaitaDarbuotojuValandos ataskaitaDarbuotojuValandos = new AtaskaitaDarbuotojuValandos();
+            this.Hide();
+            ataskaitaDarbuotojuValandos.ShowDialog();
+            this.Close();
+        }
     }
 }

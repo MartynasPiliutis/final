@@ -11,11 +11,14 @@ using PCMLibrary;
 
 namespace PCMSystem
 {
-    public partial class AtaskaitaPagalData : Form
+    public partial class AtaskaitaDarbuotojuValandos : Form
     {
-        public AtaskaitaPagalData()
+        public AtaskaitaDarbuotojuValandos()
         {
             InitializeComponent();
+            object[] theList = Program.employeeRepository.GetAllEmployeeId();
+            dfind_dropbox_idList.Items.AddRange(theList);
+            dfind_dropbox_idList.Items.Add("Visi");
         }
 
         private void dfind_button_find_Click(object sender, EventArgs e)
@@ -27,8 +30,20 @@ namespace PCMSystem
                 MessageBox.Show("Klaida!\n" + "Neteisingai pasirinkta data:\n" + "Pradžios data yra vėlesnė, nei pabaigos data.");
                 return;
             }
+            employee_button_find.Enabled = true;
+        }
+
+        private void dfind_dropbox_idList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dfind_button_find.Enabled = true;
+            Ataskaita_dataGridView.Rows.Clear();
+        }
+
+        private void employee_button_find_Click(object sender, EventArgs e)
+        {
             FiltrasAll.Enabled = true;
         }
+
         private void FiltrasAll_Enter(object sender, EventArgs e)
         {
             button_filtruoti.Enabled = true;
@@ -42,11 +57,15 @@ namespace PCMSystem
         private void button_clear_Click(object sender, EventArgs e)
         {
             Ataskaita_dataGridView.Rows.Clear();
+            dfind_dropbox_idList.Items.Clear();
+            object[] theList = Program.employeeRepository.GetAllEmployeeId();
+            dfind_dropbox_idList.Items.AddRange(theList);
             check_filter_All.Checked = false;
             check_filter_true.Checked = false;
             check_filter_false.Checked = false;
             FiltrasAll.Enabled = false;
             button_filtruoti.Enabled = false;
+            employee_button_find.Enabled = false;
         }
 
 
@@ -61,22 +80,25 @@ namespace PCMSystem
         private void button_filtruoti_Click(object sender, EventArgs e)
         {
             Ataskaita_dataGridView.Rows.Clear();
+            Employee darbuotojas = Program.employeeRepository.GetEmployeeById(Convert.ToInt32(dfind_dropbox_idList.SelectedItem));
+            int searchId = darbuotojas.EmployeeId;
+            List<Event> listToReportAllEvents = Program.eventRepository.GetAllEventList();
             DateTime startDate = data_pradzia.Value;
             DateTime endDate = data_pabaiga.Value;
             List <Event> listOfEvents = Program.eventRepository.GetAllEventList();
-            List<ReportPeriod> listToReport = Program.reportGenerator.GenarateReportOfPeriod(startDate, endDate, listOfEvents);
+            List<ReportPeriod> listToReportEventsByTime = Program.reportGenerator.GenarateReportOfPeriod(startDate, endDate, listOfEvents);
             int eilNr = 1;
             int rowNr = 0;
             if (check_filter_All.Checked == true)
             {
-                foreach (var item in listToReport)
+                foreach (var item in listToReportEventsByTime)
                 {
                         UzpildytiAtaskaita(ref eilNr, ref rowNr, item);
                 }
             }
             else if (check_filter_true.Checked == true)
             {
-                foreach (var item in listToReport)
+                foreach (var item in listToReportEventsByTime)
                 {
                     if (item.Pass == true)
                     {
@@ -86,7 +108,7 @@ namespace PCMSystem
             }
             else if (check_filter_false.Checked == true)
             {
-                foreach (var item in listToReport)
+                foreach (var item in listToReportEventsByTime)
                 {
                     if (item.Pass == false)
                     {
@@ -114,5 +136,6 @@ namespace PCMSystem
             rowNr++;
             eilNr++;
         }
+
     }
 }
