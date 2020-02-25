@@ -48,6 +48,7 @@
             this.main_label_pcms.TabIndex = 0;
             this.main_label_pcms.Text = "Pass Control Management SYSTEM";
             this.main_label_pcms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.main_label_pcms.Click += new System.EventHandler(this.main_label_pcms_Click);
             // 
             // main_button_darbuotojai
             // 
@@ -86,6 +87,7 @@
             this.main_button_ivykiai.TabIndex = 3;
             this.main_button_ivykiai.Text = "Įvykiai";
             this.main_button_ivykiai.UseVisualStyleBackColor = true;
+            this.main_button_ivykiai.Click += new System.EventHandler(this.main_button_ivykiai_Click);
             // 
             // main_button_ataskaitos
             // 
@@ -99,6 +101,7 @@
             this.main_button_ataskaitos.TabIndex = 4;
             this.main_button_ataskaitos.Text = "Ataskaitos";
             this.main_button_ataskaitos.UseVisualStyleBackColor = true;
+            this.main_button_ataskaitos.Click += new System.EventHandler(this.main_button_ataskaitos_Click);
             // 
             // main_button_exit
             // 

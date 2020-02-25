@@ -40,5 +40,23 @@ namespace PCMSystem
             vartai.ShowDialog();
             this.Close();
         }
+
+        private void main_button_ataskaitos_Click(object sender, EventArgs e)
+        {
+            Ataskaitos ataskaitos = new Ataskaitos();
+            this.Hide();
+            ataskaitos.ShowDialog();
+            this.Close();
+        }
+
+        private void main_button_ivykiai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void main_label_pcms_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

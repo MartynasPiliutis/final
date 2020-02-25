@@ -15,7 +15,7 @@ namespace PCMSystem
         public NaujiVartai()
         {
             InitializeComponent();
-            
+            addgate_button_add.Enabled = false;
             int generateId = Program.gateRepository.NewGateIdGenerator();
             addgate_textbox_autoId.Text = Convert.ToString(generateId);
         }
@@ -31,6 +31,24 @@ namespace PCMSystem
             this.Hide();
             vartai.ShowDialog();
             this.Close();
+        }
+
+        private void addgate_button_add_Click(object sender, EventArgs e)
+        {
+            int newId = Convert.ToInt32(addgate_textbox_autoId.Text);
+            string newGateName = addgate_texboxt_input_name.Text;
+            Program.gateRepository.AddNewGate(newId, newGateName);
+            addgate_texboxt_input_name.Clear();
+            addgate_textbox_autoId.ResetText();
+            int generateId = Program.gateRepository.NewGateIdGenerator();
+            addgate_textbox_autoId.Text = Convert.ToString(generateId);
+            addgate_button_add.Enabled = false;
+            MessageBox.Show("Pridėtas naujas praėjimas:\n" + $"ID: {newId}, Pavadinimas: {newGateName}");
+        }
+
+        private void addgate_texboxt_input_name_TextChanged(object sender, EventArgs e)
+        {
+            addgate_button_add.Enabled = true;
         }
     }
 }

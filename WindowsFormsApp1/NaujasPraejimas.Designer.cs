@@ -72,6 +72,7 @@
             this.addgate_button_add.TabIndex = 25;
             this.addgate_button_add.Text = "Pridėti";
             this.addgate_button_add.UseVisualStyleBackColor = true;
+            this.addgate_button_add.Click += new System.EventHandler(this.addgate_button_add_Click);
             // 
             // addgate_texboxt_input_name
             // 
@@ -80,6 +81,7 @@
             this.addgate_texboxt_input_name.Size = new System.Drawing.Size(200, 20);
             this.addgate_texboxt_input_name.TabIndex = 19;
             this.addgate_texboxt_input_name.UseWaitCursor = true;
+            this.addgate_texboxt_input_name.TextChanged += new System.EventHandler(this.addgate_texboxt_input_name_TextChanged);
             // 
             // add_label_name
             // 

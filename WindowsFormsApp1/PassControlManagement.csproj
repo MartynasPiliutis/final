@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtaskaitaTrue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtaskaitaTrue.Designer.cs">
+      <DependentUpon>AtaskaitaTrue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtaskaitaFalse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtaskaitaFalse.Designer.cs">
+      <DependentUpon>AtaskaitaFalse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Darbuotojai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +69,30 @@
     </Compile>
     <Compile Include="DarbuotojuPaieska.Designer.cs">
       <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ataskaitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ataskaitos.Designer.cs">
+      <DependentUpon>Ataskaitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtaskaitosVisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtaskaitosVisi.Designer.cs">
+      <DependentUpon>AtaskaitosVisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtaskaitaVisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtaskaitaVisi.Designer.cs">
+      <DependentUpon>AtaskaitaVisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ivykiai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ivykiai.Designer.cs">
+      <DependentUpon>Ivykiai.cs</DependentUpon>
     </Compile>
     <Compile Include="TrintiPraejima.cs">
       <SubType>Form</SubType>
@@ -102,11 +138,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AtaskaitaTrue.resx">
+      <DependentUpon>AtaskaitaTrue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtaskaitaFalse.resx">
+      <DependentUpon>AtaskaitaFalse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ataskaitos.resx">
+      <DependentUpon>Ataskaitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtaskaitosVisi.resx">
+      <DependentUpon>AtaskaitosVisi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Darbuotojai.resx">
       <DependentUpon>Darbuotojai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DarbuotojuPaieska.resx">
       <DependentUpon>DarbuotojuPaieska.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtaskaitaVisi.resx">
+      <DependentUpon>AtaskaitaVisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ivykiai.resx">
+      <DependentUpon>Ivykiai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrintiPraejima.resx">
       <DependentUpon>TrintiPraejima.cs</DependentUpon>
